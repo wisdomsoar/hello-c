@@ -51,7 +51,7 @@ struct Node* rverseList(struct Node *head)
 int main()
 {
   struct Node *header;
-  header = malloc(sizeof(header));
+  //header = malloc(sizeof(header));
   struct Node *previous;
   previous = malloc(sizeof(previous));
   struct Node *current;
@@ -60,15 +60,15 @@ int main()
   previous->data = 4;      //[4, ]
   previous->next = NULL;
 
-  for (int i = 3; i >= 1; i--)    //...    [3, ]
+  for (int i = 3; i >= 1; i--)    //...    [3, ], ...
   {
-          current = malloc(sizeof(current));
-	  current->data = i;
-	  current->next = previous;
+    current = malloc(sizeof(current));
+    current->data = i;
+    current->next = previous;
           
-	  previous = current;
+    previous = current;
 
-	  printf("%d", i);
+    printf("%d", i);
     if (i == 1)
     {
        header = current;
