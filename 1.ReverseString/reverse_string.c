@@ -2,27 +2,28 @@
 #include <stdlib.h>
 #include <string.h>
 
-char * reverseString(char *str)
+void reverseString(char *str)
 {
   int len = strlen(str);
 
-  printf("original str: %s", str);
-  char *my_result;
-  my_result = malloc(len+1);
+  printf("original str: %s\n", str);
+  printf("original str len: %d\n", len);
 
-  for (int i = 0; i < len; i++)
+                                   //    012345678     (len = 9)
+  for (int i = 0; i < len/2; i++)  //    keyboards
   {
-     my_result[i] = str[len-i-1];
-  }
-  my_result[len] = '\0';
+     char t = str[len-i-1];
 
-  return my_result;
+     printf("t: %c\n", t);
+     str[len-i-1] = str[i];     
+     str[i] = t;
+  }
 }
 
 int main()
 {
-  char *result = reverseString("keyboards");
-  printf("result: %s", result);
-  free(result);
+  char test_str[10] = "keyboards";
+  reverseString(test_str);
+  printf("result: %s", test_str);
   return 0;
 }
