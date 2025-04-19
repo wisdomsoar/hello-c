@@ -28,4 +28,16 @@ ask: the value of *(a+1) and *(p-1)?
 
 [用心去感覺] static vs global
 
-除了範圍不同，static 變數只有宣告的檔案可以使用；而 global 變數可加上 extern 關鍵字修飾，即可在其他檔案以 .h 標頭檔方式使用該變數 (也就是 internal linkage 和 external linkage 的不同)。
+除了範圍不同，static 變數只有宣告的檔案可以使用；
+而 global 變數可加上 extern 關鍵字修飾，即可在其他檔案以 .h 標頭檔方式使用該變數 
+(也就是 internal linkage 和 external linkage 的不同)。
+
+************************************************************************************
+
+const int* p 和 int* const q 差在哪？
+              ,,,  Meaning                              Note
+const int * p ,,,  p 是一個 指向 const int 的指標       不能改 int 值 (我不能動這個值，但我可以改指標看別的值)
+int * const q ,,,  q 是一個 const 指標，指向 int        不能改指標位址
+
+
+
